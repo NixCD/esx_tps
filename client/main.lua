@@ -17,7 +17,7 @@ function TPS()
     Citizen.CreateThread(function()
     
         while true do
-            Citizen.Wait(4) -- Don't change this
+            Citizen.Wait(4)
             local player = GetPlayerPed(-1)
 
             for location, val in pairs(Config.Teleports) do
@@ -79,7 +79,6 @@ function TPS()
     end)
 end
 
--- Function Teleport
 function Teleport(table, location, NotificationEnter, NotificationExit)
 -- Locals for notifcations
 local NotificationEnter = "Has ~g~entrado~w~"
@@ -102,7 +101,6 @@ function Draw3D(hint, type, x, y, z)
 	ESX.Game.Utils.DrawText3D({x = x, y = y, z = z + 1.0}, hint, 0.4)
 end
 
--- NET EVENTS
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
     PlayerData = xPlayer
@@ -112,4 +110,3 @@ RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
     PlayerData.job = job
 end)
--- NET EVENTS
